@@ -59,5 +59,20 @@ setInterval(function () {
         console.log(err);
 
     });
+    fetch('/text').then((response) => {
+    
+        return response.json();
+    
+    }).then((data) => {
+
+        const displayText = `${data[0]} ${data[1]}`;
+        document.getElementById("display-text").innerHTML = displayText;
+
+    }).catch((err) => {
+
+        // Do something for an error here
+        console.log(err);
+
+    });
 
 }, 500);
